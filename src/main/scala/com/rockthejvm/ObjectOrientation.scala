@@ -1,7 +1,7 @@
 package com.rockthejvm
 
 class ObjectOrientation extends App {
-
+  // Java equivalent: public static and main(String[] args)
   // class and instance
   class Animal {
     // define fields
@@ -102,5 +102,38 @@ class ObjectOrientation extends App {
   val bob = Person("Bob", 54) //Person.apply("Bob", 54)
 
   // exceptions
-  
+  try {
+    val x: String = null
+    x.length
+  } catch {
+    case e: Exception => "some faulty error message"
+  } finally {
+    // execute some code no matter what
+  }
+
+  // generics
+  abstract class MyList[T] {
+    def head: T
+    def tail: MyList[T]
+  }
+
+  // using a generic with a concrete type
+  val aList: List[Int] = List(1,2,3) // List.apply(1,2,3)
+  val first = aList.head
+  val rest = aList.tail
+  val aStringList = List("hello", "Scala")
+  val firstString = aStringList.head // string
+
+  // Point #1: in Scala we usually operate with IMMUTABLE values/objects
+  // Any modification to an object must return ANOTHER object
+  /*
+   Benefits:
+   a) works miracles in multithreaded/distributed env
+   b) helps making sense of the code ("reasoning about")
+   */
+  val reversedList = aList.reverse // returns a NEW list
+
+  // Point #2: Scala is closes to tbe OO ideal (object programing language)
+
 }
+
