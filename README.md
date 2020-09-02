@@ -1,4 +1,4 @@
-# scala_notes
+# Scala Cheatsheet
 
 Scala Syntax 
 - Basics
