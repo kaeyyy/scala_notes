@@ -5,7 +5,7 @@ object Basics extends App {
   val meaningOfLife: Int = 42
 
   // Common Data Types: Int, Boolean, Char, Double, Float, String
-  val aBoolean = False // type is optional
+  // val aBoolean = False // type is optional
 
   // strings and strings operations
   val aString = "I love Scala"
